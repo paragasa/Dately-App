@@ -2,3 +2,14 @@
     cursor: pointer;
     
 }
+.img {
+    max-height: 50px;
+    border: 2px solid white;
+    display: inline;
+}
+
+#profilePic{
+    max-height: 50px;
+    border: 2px solid white;
+    display: inline;
+}

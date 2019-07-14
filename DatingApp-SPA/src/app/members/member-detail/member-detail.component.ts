@@ -23,7 +23,7 @@ export class MemberDetailComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.user = data.user;
     });
-
+    console.log(this.user);
 // Gallery
     this.galleryOptions = [
     {
@@ -34,21 +34,7 @@ export class MemberDetailComponent implements OnInit {
       imageAnimation: NgxGalleryAnimation.Slide,
       preview: false
     }
-  // max-width 800
-  // {
-  //     breakpoint: 800,
-  //     width: '100%',
-  //     height: '600px',
-  //     imagePercent: 100,
-  //     thumbnailsPercent: 20,
-  //     thumbnailsMargin: 20,
-  //     thumbnailMargin: 20
-  // },
-  // // max-width 400
-  // {
-  //     breakpoint: 400,
-  //     preview: false
-  // }
+
     ];
 
     this.galleryImages = this.getImages();
@@ -57,7 +43,7 @@ export class MemberDetailComponent implements OnInit {
 
   getImages() {
     const imageUrls = [];
-    for (const photo of this.user.photo) {
+    for (const photo of this.user.photos) {
       imageUrls.push({
         small: photo.url,
         medium: photo.url,

@@ -43,10 +43,12 @@ namespace DatingApp.Api
                 });
             services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors(); //cor serv web api to ang
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings")); //get our cloud settings
             services.AddAutoMapper();
             services.AddTransient<Seed>(); //trans user seeding
             services.AddScoped<IAuthRepository, AuthRepository>(); // needed fo interfaces
             services.AddScoped<IDatingRepository, DatingRepository>();
+            services.AddScoped<LogUserActivity>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme) //auth tokens
             .AddJwtBearer(options => {
                 options.TokenValidationParameters= new TokenValidationParameters{

@@ -16,6 +16,7 @@ export class MemberEditComponent implements OnInit {
     ,         private route: ActivatedRoute) { }
 
   user: User;
+  photoUrl: string;
   @ViewChild('editForm', {static: false})
   editForm: NgForm; // ang 8 update add static
   // Handles event where window closes before update
@@ -30,6 +31,7 @@ export class MemberEditComponent implements OnInit {
   this.route.data.subscribe(data => {
       this.user = data.user;
     });
+  this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
 
   updateUser() {
@@ -40,5 +42,9 @@ export class MemberEditComponent implements OnInit {
       this.alertify.error(error);
     });
 
+  }
+
+  updateMainPhoto(photoUrl) {
+    this.user.photoUrl = photoUrl;
   }
 }

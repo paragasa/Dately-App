@@ -16,11 +16,22 @@ constructor(private http: HttpClient) { }
     return this.http.get<User[]>(this.baseUrl + 'users');
   }
 
-  getUser(id): Observable<User> {
+  getUser(id: any): Observable<User> {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
 
   updateUser(id: number, user: User) {
-    return this.http.put<User>(this.baseUrl + 'users' + id, user);
+    return this.http.put<User>(this.baseUrl + 'users/' + id, user);
+  }
+  /*
+  userId :token id,
+  id : photo
+   */
+  setMainPhoto(userId: number, id: number) {
+    return this.http.post<User>(this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain', {}); // need of body forpost
+  }
+
+  deletePhoto(userId: number, id: number) {
+      return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
   }
 }
