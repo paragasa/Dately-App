@@ -2,11 +2,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FileUploadModule } from 'ng2-file-upload';
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDatepickerModule, BsDropdownModule, ButtonsModule, PaginationModule, TabsModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { TimeAgoPipe } from 'time-ago-pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,15 +24,16 @@ import { RegisterComponent } from './register/register.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { ListsResolver } from './_resolvers/lists.resolver';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { UserService } from './_services/user.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 
+// or
 // allows JWT token getter on instance
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -62,7 +65,9 @@ export function tokenGetter() {
       BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
       NgxGalleryModule,
+      PaginationModule.forRoot(),
       FileUploadModule,
+      ButtonsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config: {
@@ -81,6 +86,8 @@ export function tokenGetter() {
       UserService,
       MemberDetailResolver,
       MemberDetailResolver,
+      ListsResolver,
+      MessagesResolver,
       MemberEditResolver
    ],
    bootstrap: [

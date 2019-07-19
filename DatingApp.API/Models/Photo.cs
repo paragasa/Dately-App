@@ -12,7 +12,7 @@ namespace DatingApp.API.Models
 
         public DateTime DateAdded { get; set; }
 
-        public bool IsMain { get; set; }
+        public bool isMain { get; set; }
 
         public string PublicId { get; set; }
 
@@ -21,5 +21,7 @@ namespace DatingApp.API.Models
 
         //ref user to photo/ if deleted will delte photo/ for referencial-cascade
         public int UserId { get; set; }
+
+    
     }
 }

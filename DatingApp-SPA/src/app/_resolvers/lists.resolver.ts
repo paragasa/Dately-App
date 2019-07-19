@@ -9,18 +9,20 @@ import { catchError } from 'rxjs/operators';
 /* Resolver for non existent users */
 
 @Injectable({ providedIn: 'root' })
-export class MemberListResolver implements Resolve<User[]> {
+export class ListsResolver implements Resolve<User[]> {
     /**
      * PIPE PAGE SIZE TO ASPNET
      */
     pageNumber = 1;
     pageSize = 5;
+    likesParam = 'Likers';
+    
     constructor(private userService: UserService, private alertify: AlertifyService,
                 private route: Router) {
     }
 
     resolve(route: ActivatedRouteSnapshot): Observable<User[]> {
-        return this.userService.getUsers(this.pageNumber, this.pageSize).pipe(
+        return this.userService.getUsers(this.pageNumber, this.pageSize, null, this.likesParam).pipe(
             catchError(error => {
                 this.alertify.error('Problem Retrieving Data');
                 this.route.navigate(['/']);

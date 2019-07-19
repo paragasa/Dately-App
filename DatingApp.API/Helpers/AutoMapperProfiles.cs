@@ -13,13 +13,13 @@ namespace DatingApp.API.Helpers
         {
             CreateMap<User, UserForList>()
                 .ForMember(dest => dest.PhotoUrl, opt => {
-                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
+                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.isMain).Url);
                 }).ForMember(dest => dest.Age, opt => {
                     opt.ResolveUsing(dob => dob.DateOfBirth.CalculateAge()); //use resolve to calculate age from dob of user
                 }); 
             CreateMap<User, UserForDetailDto>()
                 .ForMember(dest => dest.PhotoUrl, opt => {
-                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
+                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.isMain).Url);
                 }).ForMember(dest => dest.Age, opt => {
                     opt.ResolveUsing(dob => dob.DateOfBirth.CalculateAge()); //use resolve to calculate age from dob of user
                 });
@@ -34,6 +34,12 @@ namespace DatingApp.API.Helpers
             
              CreateMap<UserForRegisterDto, User>();
 
+             CreateMap<MessageForCreationDto, Message>().ReverseMap(); // Return allowed
+
+            CreateMap<Message,MessageToReturnDto>().ForMember(m => m.SenderPhotoUrl, opt => opt
+                    .MapFrom(u => u.Sender.Photos.FirstOrDefault(p => p.isMain).Url))
+                .ForMember(m => m.RecipientPhotoUrl, opt => opt
+                    .MapFrom(u => u.Recipient.Photos.FirstOrDefault(p => p.isMain).Url));
     
 
             
