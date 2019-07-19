@@ -32,6 +32,7 @@ import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { UserService } from './_services/user.service';
 import { MessagesResolver } from './_resolvers/messages.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 // or
 // allows JWT token getter on instance
@@ -52,6 +53,7 @@ export function tokenGetter() {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
+      MemberMessagesComponent,
       TimeAgoPipe
  ],
    imports: [
