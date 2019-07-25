@@ -11,8 +11,9 @@
       "LookingFor": "Do ullamco consequat minim do amet non velit excepteur duis officia fugiat sunt. Ipsum laborum exercitation fugiat est exercitation officia aute reprehenderit fugiat et sunt. Proident velit cillum et anim elit ex eu velit reprehenderit.\r\n",
       "Interests": "Sunt ad consequat magna excepteur amet aliquip ex ad veniam tempor fugiat aliquip nostrud.",
       "City": "Hannasville",
+      "PhotoUrl": "https://randomuser.me/api/portraits/women/12.jpg",
       "Country": "Uganda",
-      "Photo": [
+      "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/12.jpg",
           "isMain": true,
@@ -33,7 +34,8 @@
       "Interests": "Mollit amet ea nisi et Lorem sint nostrud ullamco sunt fugiat nulla ad magna commodo.",
       "City": "Hebron",
       "Country": "Mongolia",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/women/20.jpg",
+      "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/20.jpg",
           "isMain": true,
@@ -54,7 +56,8 @@
       "Interests": "Quis aliquip consequat do aliquip voluptate esse.",
       "City": "Hachita",
       "Country": "Solomon Islands",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/women/44.jpg",
+      "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/44.jpg",
           "isMain": true,
@@ -75,9 +78,10 @@
       "Interests": "Occaecat aliquip enim irure ipsum est ad irure enim laboris tempor officia ea.",
       "City": "Ola",
       "Country": "Antarctica",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/women/23.jpg",
+      "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/12.jpg",
+          "url": "https://randomuser.me/api/portraits/women/23.jpg",
           "isMain": true,
           "description": "Sit velit culpa eu veniam ea."
         }
@@ -96,7 +100,8 @@
       "Interests": "Eiusmod sit cupidatat eiusmod qui nostrud mollit.",
       "City": "Linwood",
       "Country": "Gambia",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/women/8.jpg",
+      "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/8.jpg",
           "isMain": true,
@@ -117,7 +122,8 @@
       "Interests": "Nostrud qui non deserunt ipsum exercitation nulla amet velit irure.",
       "City": "Basye",
       "Country": "Zaire",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/men/73.jpg",
+      "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/men/73.jpg",
           "isMain": true,
@@ -138,9 +144,10 @@
       "Interests": "Reprehenderit voluptate nostrud reprehenderit id laboris quis deserunt incididunt in laboris est.",
       "City": "Mansfield",
       "Country": "Saint Vincent and The Grenadines",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/men/74.jpg",
+      "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/65.jpg",
+          "url": "https://randomuser.me/api/portraits/men/74.jpg",
           "isMain": true,
           "description": "Cupidatat incididunt velit ex aute ea ut commodo id id dolor ipsum."
         }
@@ -159,9 +166,10 @@
       "Interests": "Id anim eu dolor do duis sit esse esse.",
       "City": "Ruffin",
       "Country": "Seychelles",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/men/62.jpg",
+      "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/92.jpg",
+          "url": "https://randomuser.me/api/portraits/men/62.jpg",
           "isMain": true,
           "description": "Laborum cupidatat anim magna dolore id ut eiusmod ad commodo eu dolore sit labore."
         }
@@ -180,7 +188,8 @@
       "Interests": "Laborum occaecat ullamco velit et officia officia esse cillum velit exercitation ut ad cillum.",
       "City": "Sheatown",
       "Country": "Turks and Caicos Islands",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/men/42.jpg",
+      "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/men/42.jpg",
           "isMain": true,
@@ -201,9 +210,10 @@
       "Interests": "Non nisi dolore dolore amet aliqua sit aliqua consequat fugiat sit velit.",
       "City": "Beyerville",
       "Country": "Solomon Islands",
-      "Photo": [
+      "PhotoUrl": "https://randomuser.me/api/portraits/men/23.jpg",
+      "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/97.jpg",
+          "url": "https://randomuser.me/api/portraits/men/23.jpg",
           "isMain": true,
           "description": "Enim labore sint ea sunt commodo sit."
         }

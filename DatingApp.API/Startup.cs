@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using DatingApp.API.Helpers;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace DatingApp.Api
 {
@@ -35,6 +36,34 @@ namespace DatingApp.Api
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // public void ConfigureServices(IServiceCollection services)
+        // {
+        //     services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+        //         .AddJsonOptions(opt => {
+        //             opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+        //         });
+        //     services.AddDbContext<DataContext>(options => options
+        //         .UseMySql(Configuration.GetConnectionString("DefaultConnection"))
+        //         .ConfigureWarnings(warning => warning.Ignore(CoreEventId.IncludeIgnoredWarning)));
+        //     services.AddCors(); //cor serv web api to ang
+        //     services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings")); //get our cloud settings
+        //     services.AddAutoMapper();
+        //     services.AddTransient<Seed>(); //trans user seeding
+        //     services.AddScoped<IAuthRepository, AuthRepository>(); // needed fo interfaces
+        //     services.AddScoped<IDatingRepository, DatingRepository>();
+        //     services.AddScoped<LogUserActivity>();
+        //     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme) //auth tokens
+        //     .AddJwtBearer(options => {
+        //         options.TokenValidationParameters= new TokenValidationParameters{
+        //             ValidateIssuerSigningKey= true,
+        //             IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+        //             ValidateIssuer = false,
+        //             ValidateAudience = false
+        //         };
+        //     });
+           
+        // }
+        //ConfigureDevelopmentServices
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
@@ -42,6 +71,7 @@ namespace DatingApp.Api
                     opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
             services.AddDbContext<DataContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.BuildServiceProvider().GetService<DataContext>().Database.Migrate();
             services.AddCors(); //cor serv web api to ang
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings")); //get our cloud settings
             services.AddAutoMapper();
@@ -60,7 +90,6 @@ namespace DatingApp.Api
             });
            
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
@@ -85,10 +114,16 @@ namespace DatingApp.Api
             }
 
             // app.UseHttpsRedirection();
-            //seeder.SeedUsers();
+            seeder.SeedUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
-            app.UseMvc();
+            app.UseDefaultFiles();//look for index.html in www.root
+            app.UseStaticFiles(); //for www files
+            app.UseMvc(routes =>{routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Fallback", action = "Index"}
+                );
+            });
             
         }
     }
