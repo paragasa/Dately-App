@@ -14,6 +14,8 @@ baseUrl = 'http://localhost:5000/api/auth/';
 jwtHelper = new JwtHelperService();
 decodedToken: any;
 currentUser: User;
+loggedin = new BehaviorSubject<boolean>(false);
+isLogged= this.loggedin.asObservable();
 photoUrl = new BehaviorSubject<string>('../../assets/user.png');
 currentPhotoUrl = this.photoUrl.asObservable();
 
@@ -29,6 +31,7 @@ login(model: any) {
         localStorage.setItem('user', JSON.stringify(user.user));
         this.decodedToken = this.jwtHelper.decodeToken(user.token);
         this.currentUser = user.user;
+        this.setLoggedIn(true);
         this.ChangeProfilePic(this.currentUser.photoUrl);
         // console.log(this.decodedToken);
       }
@@ -38,9 +41,14 @@ login(model: any) {
   ChangeProfilePic(photoUrl: string) {
     this.photoUrl.next(photoUrl);
   }
-
+  setLoggedIn(log: boolean){
+    this.loggedin.next(log);
+  }
   register(user: User) {
     return this.http.post(this.baseUrl + 'register', user);
+  }
+  logoff(){
+    this.loggedin.next(false);
   }
 
   loggedIn() {
