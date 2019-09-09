@@ -1,7 +1,22 @@
+
+
+.card-body {
+    padding: 0 25px;
+}
+
+.card-footer{
+    
+    background-color: #fff;
+    border-top: none;
+}
+
+
 .img-thumbnail {
-    margin: 25px;
-    width: 85%;
-    height: 85%;
+   border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    border: none;
+
 }
 
 .card-body {
@@ -13,3 +28,40 @@
     background-color: #fff;
     border-top: none;
 }
+
+
+
+.tab-panel {
+    border:none;
+    padding: 0;
+    border-radius: 4px;
+    
+}
+
+.header-edit{
+    color: #464646;
+}
+
+.member-tabset > .nav-tabs > li.active {
+    border-bottom: 4px solid #474747;
+    position: relative;
+}
+
+
+.nav-link {
+    background-color: orange;
+
+}
+
+.nav-link span{
+    text-decoration: none;
+    color: #464646!important;
+}
+
+.nav-item:active{
+    border-bottom: none;
+}
+/* 
+li{
+    background-color: #fff;
+} */

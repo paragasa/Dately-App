@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FileUploadModule } from 'ng2-file-upload';
-import { BsDatepickerModule, BsDropdownModule, ButtonsModule, PaginationModule, TabsModule } from 'ngx-bootstrap';
+import { BsDatepickerModule, BsDropdownModule, ButtonsModule, PaginationModule, TabsModule, CollapseModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,7 @@ import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { UserService } from './_services/user.service';
+import { FooterComponent } from './Footer/Footer.component';
 
 // or
 // allows JWT token getter on instance
@@ -54,6 +55,7 @@ export function tokenGetter() {
       MemberEditComponent,
       PhotoEditorComponent,
       MemberMessagesComponent,
+      FooterComponent,
       TimeAgoPipe
  ],
    imports: [
@@ -65,12 +67,14 @@ export function tokenGetter() {
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
+      CollapseModule.forRoot(),
       TabsModule.forRoot(),
       NgxGalleryModule,
       PaginationModule.forRoot(),
       FileUploadModule,
       ButtonsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
+      
       JwtModule.forRoot({
          config: {
             tokenGetter,

@@ -10,3 +10,42 @@
     background-color: rgba(202, 182, 205, 0.386);
     border-radius: 20px;
 }
+
+.hero{
+    background-color: #EBE6E0;
+    
+}
+
+.header-banner{
+    color: #474747;
+
+   
+}
+.header-banner i{
+    color: crimson;
+}
+.dately-image-hold{
+    display: flex;
+    margin: auto;
+    width: 100%;
+
+}
+.dately-image{
+    width:100%;
+    height: 20rem;
+    overflow: hidden;
+}
+
+.btn-signup{
+    transition: all .4s;
+    transform: scale(1);
+    color: #474747;
+    background-color: white;
+}
+.btn-signup:hover{
+    box-shadow: 0 4px 5px rgba(0,0,0,.3);
+    transform: scale(1.2);
+    color: black;
+    font-weight: 800;
+   
+}

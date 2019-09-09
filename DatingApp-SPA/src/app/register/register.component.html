@@ -1,5 +1,5 @@
-<form [formGroup]="registrationForm" (ngSubmit)="register()">
-  <h2 class="text-center text-primary">Sign Up</h2>
+<form [formGroup]="registrationForm" (ngSubmit)="register()" class="mt-2">
+  <h2 class="text-center register-h2">Sign Up</h2>
   <hr>
   <!-- USERNAME -->
   <div class="form-group">
@@ -97,8 +97,8 @@
   </div>
   <!-- FORM BUTTONS -->
   <div class="form-group text-center">
-    <button class="btn btn-success" type="submit" [disabled]="!registrationForm.valid">Register</button>
-    <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+    <button class="btn btn-good mr-1" type="submit" [disabled]="!registrationForm.valid">Register</button>
+    <button class="btn btn-cancel" type="button" (click)="cancel()">Cancel</button>
   </div>
   
 </form>

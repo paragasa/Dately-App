@@ -1,61 +1,72 @@
-
-<!-- Match Results -->
-<div class="text-center mt-3">
-  <h2>Your matches - {{pagination.totalItems}} found</h2>
-</div>
-
-<!-- SEARCH SPECFICATION -->
-<form class="form-inline" #form='ngForm' (ngSubmit)="loadUsers()" novalidate>
-  <div class="form-group">
-    <label for="minAge">Age From</label>
-    <input type="number" class="form-control ml-1" style="width: 70px" id="minAge" name="minAge"
-    [(ngModel)]="userParams.minAge">
-</div>
-
-  <div class="form-group px-2">
-    <label for="maxAge">Age To</label>
-    <input type="number" class="form-control ml-1" style="width: 70px" id="maxAge" name="maxAge"
-      [(ngModel)]="userParams.maxAge">
+<div class="container">
+  <div class="row p-4 bg-primary m-3 shadow-lg ">
+    <!-- Match Results -->
+  <div class="text-center mt-3 mx-auto col-12">
+    <h2>Your matches - {{pagination.totalItems}} found</h2>
   </div>
-
-  <div class="form-group px-2">
-    <label for="gender">Show: </label>
-    <select class="form-control ml-1" style="width: 130px" id="gender" name="gender"
-      [(ngModel)]="userParams.gender">
-      <option *ngFor="let gender of genderList" [value]="gender.value">
-          {{gender.display}}
-      </option>
-    </select>
-  </div>
-  <button type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
-  <button type="button" class="btn btn-info" style="margin-left:10px" (click)="resetFilters()">Reset Filter</button>
-
-
-  <div class="col">
-    <div class=" btn-group float-right">
-      <button ty form-controlpe="button" [(ngModel)]="userParams.orderBy" (click)="loadUsers()" name="orderBy" class="btn btn-primary " btnRadio="lastActive">Last Active</button>
-      <button type="button" [(ngModel)]="userParams.orderBy" (click)="loadUsers()" name="orderBy" class="btn btn-primary " btnRadio="created">Newest Members</button>
+  
+  <!-- SEARCH SPECFICATION -->
+  <form class="form-inline col-sm-12 col-lg-9 mx-auto  " #form='ngForm' (ngSubmit)="loadUsers()" novalidate>
+    <div class="w-100">
+      <div class="d-flex flex-row flex-sm-column flex-md-row">
+        <div class="form-group my-2">
+          <label for="minAge">Age From</label>
+          <input type="number" class="form-control ml-1" style="width: 70px" id="minAge" name="minAge"
+          [(ngModel)]="userParams.minAge">
+      </div>
+      
+        
+          <div class="form-group px-2 my-2 ">
+            <label for="maxAge">Age To</label>
+            <input type="number" class="form-control ml-1" style="width: 70px" id="maxAge" name="maxAge"
+              [(ngModel)]="userParams.maxAge">
+          </div>
+        
+          <div class="form-group px-2 my-2">
+            <label for="gender">Show: </label>
+            <select class="form-control ml-1" style="width: 130px" id="gender" name="gender"
+              [(ngModel)]="userParams.gender">
+              <option *ngFor="let gender of genderList" [value]="gender.value">
+                  {{gender.display}}
+              </option>
+            </select>
+          </div>
+      </div>
+      <button type="submit" class="col-sm-12 col-lg-5 btn btn-primary" style="margin-left:10px">Apply Filters</button>
+      <button type="button" class="col-sm-12 col-lg-5 btn btn-info" style="margin-left:10px" (click)="resetFilters()">Reset Filter</button>
+    
+    
+      <div class="row my-2">
+        <div class=" btn-group float-right">
+          <button ty form-controlpe="button" [(ngModel)]="userParams.orderBy" (click)="loadUsers()" name="orderBy" class="btn btn-primary " btnRadio="lastActive">Last Active</button>
+          <button type="button" [(ngModel)]="userParams.orderBy" (click)="loadUsers()" name="orderBy" class="btn btn-primary " btnRadio="created">Newest Members</button>
+        </div>
+      </div>
     </div>
-  </div>
-
+    
+  </form>
+  <div class="row  mt-2">
+    <div class=" col-6 col-sm-4">
+      <pagination
+          [boundaryLinks]="true"
+          [totalItems]="pagination.totalItems"
+          [(ngModel)]="pagination.currentPage"
+          [itemsPerPage]="pagination.itemsPerPage"
+          (pageChanged)="pageChanged($event)"
+        previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+    
+      </pagination>
+    </div>
   <!-- GET USERS -->
-  <div class="container mt-5">
-    <div class="row">
-      <div *ngFor="let user of users" class="col-lg-2 col-md-3 col-sm-6">
+  <div class="container mt-2">
+    <div class="row ">
+      <div *ngFor="let user of users" class="col-lg-3 col-md-6 col-sm-12">
         <app-member-card [user]="user" ></app-member-card>
       </div>
     </div>
   </div>
-</form>
-<!-- Pagination -->
-<div class="d-flex justify-content-center">
-    <pagination
-        [boundaryLinks]="true"
-        [totalItems]="pagination.totalItems"
-        [(ngModel)]="pagination.currentPage"
-        [itemsPerPage]="pagination.itemsPerPage"
-        (pageChanged)="pageChanged($event)"
-      previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
-  
-    </pagination>
   </div>
+  <!-- Pagination -->
+  
+  </div>
+</div>

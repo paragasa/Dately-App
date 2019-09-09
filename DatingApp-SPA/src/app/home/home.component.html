@@ -1,24 +1,38 @@
-<div class="container mt-5"> 
-    <div class="mast">
-        <img src="./../../assets/DatelyLogo.png" alt="logo">
-        <h1>Welcome to Dately</h1>
-    </div>
+<div class="container-fluid   my-5"> 
+    
+  <div class="container hero">
+      <div class="row p-4 m-3">  
+          <div class="col-12 col-lg-6 col-xl-5 offset-xl-1 shadow-sm p-4">
+            <h1 class="header-banner">Welcome to Dately <i class="fa fa-heart"></i></h1>
+            <p>Sometimes finding the one you'll love is just a like away. Try Dately right now and find the one you've been looking for! </p>
+            <button *ngIf="!registerMode && !logged" (click)="registerToggle()"  class="btn btn-light btn-lg action-button  btn-signup" type="button">Register</button>
+          </div>
+          <div class="col-md-5 col-lg-6 d-none d-lg-block ">
+            <div class="dately-image-hold">
+              <img class="dately-image" src="../../assets/dately_img.jpg" />
+                <div class="screen">
+
+                </div>
+            </div>
+        </div>
+        </div>  
+  </div>
     
     
-  <div class="register" *ngIf="!registerMode && !logged" style="text-align: center">
+  <!-- <div class="register" *ngIf="!registerMode && !logged" style="text-align: center">
     <h1>Find your match</h1>
     <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
     <div class="text-center">
       <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
       <button class="btn btn-info btn-lg">Learn more</button>
     </div>
-  </div>
+  </div> -->
 
  
 
   <div *ngIf="registerMode" class="container">
-    <div class="row justify-content-center">
-      <div class="col-4">
+    <div class="row justify-content-center bg-primary rounded shadow-lg p-2">
+      <div class="col-6 mb-3">
         <app-register  (cancelRegister)="cancelRegisterMode($event)"></app-register>
       </div>
     </div>

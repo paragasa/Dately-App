@@ -1,15 +1,27 @@
 .img-thumbnail {
-    margin: 25px;
-    width: 85%;
-    height: 85%;
+    width: 95%;
+    height: 95%;
+    border: none;
 }
 
 .card-body {
-    padding: 0 25px;
+
 }
 
 .card-footer{
-    padding: 10px 15px;
+
     background-color: #fff;
     border-top: none;
+}
+
+
+.tab-panel {
+    border:none;
+    padding: 0;
+    border-radius: 4px;
+    
+}
+
+.header-edit{
+    color: #464646;
 }

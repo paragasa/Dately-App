@@ -1,11 +1,11 @@
 <div class="container mt-4">
-  <div class="row">
-    <h1>{{user.knownAs | titlecase}}'s Profile</h1>
+  <div class="row m-2">
+    <h1 class="  bg-light text-dark p-1">{{user.knownAs | titlecase}}'s Profile</h1>
   </div>
   <div class="row">
-    <div class="col-sm-4">
-      <div class="card">
-        <img src="{{user.photoUrl || '../../assets/user.png'}}" alt="{{user.username}}" class="card-img-top img-thumbnail">
+    <div class="col-sm-4 mt-sm-3">
+      <div class="card d-flex flex-column justify-content-sm-around align-items-center">
+        <img src="{{user.photoUrl || '../../assets/user.png'}}" alt="{{user.username}}" class="card-img-top img-thumbnail my-2">
         <div class="card-body">
           <div>
               <strong>Location:</strong>
@@ -25,16 +25,16 @@
           </div>
         </div>
         <div class="card-footer">
-          <div class="btn-group d-flex">
-            <button class="btn btn-primary w-100">Like</button>
-            <button class="btn btn-success w-100" (click)="selectTab(3)">Message</button>
+          <div class=" d-flex flex-sm-column">
+            <button class="btn btn-primary ">Like</button>
+            <button class="btn btn-success mt-1" (click)="selectTab(3)">Message</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 mt-sm-3 pt-sm-3 bg-white">
       <div class="tab-panel">
-        <tabset class="member-tabset" #memberTabs>
+        <tabset class="member-tabset " #memberTabs>
           <tab heading= "About {{user.username | titlecase}}">
             <h4>Description</h4>
             <p>{{user.introduction}}</p>

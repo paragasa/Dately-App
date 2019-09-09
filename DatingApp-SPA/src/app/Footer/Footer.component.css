@@ -1,0 +1,9 @@
+.social-text{
+    color: white;
+    text-decoration: none;
+}
+
+.social-text:link, .social:visited{
+    color: currentColor;
+    text-decoration: none;
+}

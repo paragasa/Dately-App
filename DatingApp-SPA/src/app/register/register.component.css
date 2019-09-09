@@ -2,3 +2,35 @@
     border: red solid 1px;
 }
 
+
+.register-h2{
+    color: #474747;
+    
+}
+
+.input{
+    color: inherit;
+    font-family: inherit;
+}
+
+.btn-good{
+    background-color: #b58ca3;
+    color: #474747;
+    border-radius: 100px;
+    transition: all .3s;
+}
+.btn-good:hover{
+    background-color: #927083;
+    transform: scale(1.04);
+    color: white;
+    border-radius: 100px;
+    
+   
+}
+
+.btn-cancel{
+    background-color: #e5e5e5;
+    color: #474747;
+    border-radius: 100px;
+    
+}
