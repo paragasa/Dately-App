@@ -1,9 +1,9 @@
 
-.mast{
-    text-align: center;
-    background-color: rgba(137, 43, 226, 0.208);
-    border-radius: 20px;
-    margin-bottom: 20px;
+.main-content{
+    background: #D3CCE3;  /* fallback for old browsers */
+    background-image: -webkit-linear-gradient( to bottom, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to  bottom, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 .register{
     text-align: center;
@@ -11,11 +11,31 @@
     border-radius: 20px;
 }
 
-.hero{
-    background-color: #EBE6E0;
+.mast{
+   
+    height: 60vh;
+    
+
     
 }
-
+@media only screen and (max-width:992px ){
+    .mast{
+        
+        background: url(../../assets/dately_img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+            
+    }
+    
+}
+@media only screen and (max-width:768px ){
+    .mast-text{
+        
+       visibility: hidden;
+            
+    }
+    
+}
 .header-banner{
     color: #474747;
 
@@ -49,3 +69,62 @@
     font-weight: 800;
    
 }
+.features-color{
+   
+}
+.feature-box{
+    background-color: var(--color-primary-dark);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    font-weight: 400;
+    color: #474747;
+    height: 300px;
+    width:  100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.feature-box:hover{
+    transform: scale(1.05);
+}
+
+.feature-box-1{
+   background-color: white;
+}
+.feature-box-2{
+    background-color: white;
+    
+}
+.feature-box-3{
+    background-color: white;
+}
+
+.feature-pic{
+    
+    width: 100%;
+}
+
+@media only screen and (max-width:768px ){
+    .feature-box{
+        border-radius: 0;
+    }
+    .feature-pic{
+    
+        width: 50%;
+    }
+    
+}
+.grid-image{
+    height: 300px;
+    width: 100%;
+}
+
+.feature-icon{
+
+}
+.feature-description{
+    font-size: .8rem;
+}
+/* .feature-box:not(:last-child){
+    margin-right: 1rem;
+} */

@@ -32,11 +32,13 @@
             </select>
           </div>
       </div>
-      <button type="submit" class="col-sm-12 col-lg-5 btn btn-primary" style="margin-left:10px">Apply Filters</button>
-      <button type="button" class="col-sm-12 col-lg-5 btn btn-info" style="margin-left:10px" (click)="resetFilters()">Reset Filter</button>
+     <div class="buttons  d-flex  justify-content-md-between align-items-center flex-sm-column flex-md-row">
+      <button type="submit" class="col-sm-12 col-md-5  col-lg-5 btn btn-primary" >Apply Filters</button>
+      <button type="button" class="col-sm-12 col-md-5 col-lg-5 btn btn-info"  (click)="resetFilters()">Reset Filter</button>
+     </div>
     
     
-      <div class="row my-2">
+      <div class="row my-2 col-6 col-sm-12 col-md-6">
         <div class=" btn-group float-right">
           <button ty form-controlpe="button" [(ngModel)]="userParams.orderBy" (click)="loadUsers()" name="orderBy" class="btn btn-primary " btnRadio="lastActive">Last Active</button>
           <button type="button" [(ngModel)]="userParams.orderBy" (click)="loadUsers()" name="orderBy" class="btn btn-primary " btnRadio="created">Newest Members</button>

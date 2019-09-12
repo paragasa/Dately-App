@@ -26,7 +26,11 @@
     filter: brightness(60%);
     background-color: var(--color-black);
 }
-
+.btn-nav{
+    border-radius: 10px;
+    height: 3rem;
+    width: 3rem;
+}
 .btn-login:hover{
     color: white;
     filter: brightness(100%);

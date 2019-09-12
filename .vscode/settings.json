@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0693e064-284f-45fc-a192-94be74594180/resourceGroups/db-resource-group/providers/Microsoft.Web/sites/dately",
+    "appService.deploySubpath": ""
+}

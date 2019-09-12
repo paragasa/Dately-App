@@ -1,24 +1,61 @@
-<div class="container-fluid   my-5"> 
-    
-  <div class="container hero">
-      <div class="row p-4 m-3">  
-          <div class="col-12 col-lg-6 col-xl-5 offset-xl-1 shadow-sm p-4">
-            <h1 class="header-banner">Welcome to Dately <i class="fa fa-heart"></i></h1>
-            <p>Sometimes finding the one you'll love is just a like away. Try Dately right now and find the one you've been looking for! </p>
-            <button *ngIf="!registerMode && !logged" (click)="registerToggle()"  class="btn btn-light btn-lg action-button  btn-signup" type="button">Register</button>
+<div class="container-fluid "> 
+  <div class="row  mast">  
+    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1 py-3 ">
+      <h1 class="header-banner">Welcome to Dately </h1>
+      <p class="mast-text"> Sometimes finding the one you'll love is just a like away. Try Dately right now and find the one you've been looking for! </p>
+      <button *ngIf="!registerMode && !logged" (click)="registerToggle()"  class="btn btn-light btn-lg action-button  btn-signup ml-4" type="button">Register</button>
+    </div>
+    <div class="col-md-5 col-lg-6 d-none d-lg-block ">
+      <div class="dately-image-hold">
+        <img class="dately-image" src="../../assets/dately_img.jpg" />
+          <div class="screen">
           </div>
-          <div class="col-md-5 col-lg-6 d-none d-lg-block ">
-            <div class="dately-image-hold">
-              <img class="dately-image" src="../../assets/dately_img.jpg" />
-                <div class="screen">
-
-                </div>
-            </div>
-        </div>
-        </div>  
+      </div>
   </div>
-    
-    
+</div>
+  <div class="container   py-2 px-2 pd-sm-none ">
+        
+        <div class="row py-5 features-color">
+  
+              <div class="feature-box feature-box-1 ml-auto  d-flex flex-column align-items-center col-12 col-lg-3  col-md-3  col-sm-12   mt-md-none">
+                <div class="feature-icon">
+                  <img src="../../assets/undraw_love_xfcv.png" alt="image1" class="feature-pic">
+                </div>
+                <p class="feature-description">
+                   We’re levelling the playing field and changing the dynamics of dating. We believe relationships should begin with respect and equality.
+                </p>
+              </div>
+              <div class="feature-box  feature-box-2 d-flex flex-column align-items-center col-12 col-lg-3  col-md-3  col-sm-12  mt-md-none  mx-md-auto ">
+                <div class="feature-icon">
+                  <img src="../../assets/undraw_hire_te5y.png" alt="image1" class="feature-pic">
+                </div>
+                <p class="feature-description">
+                  Social opportunities to come out and show just what you have to offer!
+                </p>
+              </div>
+              <div class="feature-box feature-box-3 mr-auto  d-flex flex-column align-items-center col-12 col-lg-3  col-md-3  col-sm-12 mt-md-none">
+                <div class="feature-icon">
+                  <img src="../../assets/undraw_intense_feeling_ft9s.png" alt="image1" class="feature-pic">
+                </div>
+                <p class="feature-description">
+                  Whether you’re new to a city or looking to expand your social circle, Dately is a simplified way to create meaningful friendships.
+                </p>
+              </div>
+
+          </div>
+      
+  </div>
+    <!-- GRID -->
+    <!-- <div class="row">
+        <div class="col-6 col-lg-3">
+          <img src="https://source.unsplash.com/random/603x600" alt="gridimg" class="grid-image">
+        </div>
+        <div class="col-6 col-lg-3">
+          <img src="https://source.unsplash.com/random/600x600" alt="gridimg" class="grid-image">
+        </div>
+
+
+  </div> -->
   <!-- <div class="register" *ngIf="!registerMode && !logged" style="text-align: center">
     <h1>Find your match</h1>
     <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
